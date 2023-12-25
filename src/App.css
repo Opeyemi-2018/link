@@ -1,0 +1,489 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f3ff;
+}
+
+.main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 5px;
+  position: relative;
+  height: 95vh;
+}
+
+/*----------------------header component start-----------------------*/
+.header-component {
+  background: #fff;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.header-component header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-component nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.logo {
+  color: #222;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #777;
+  font-weight: bold;
+}
+
+a.activeStyle {
+  font-size: 15px;
+  color: #7071e8;
+  background-color: #edeaff;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    font-size: 15px;
+  }
+  
+  a {
+    font-size: 12px;
+  }
+  
+  a.activeStyle {
+    font-size: 11px;
+    padding: 3px;
+  border-radius: 4px;
+  }
+}
+/*----------------------header component end-----------------------*/
+
+/*----------------------home component start-----------------------*/
+
+.home{
+  margin: 10px auto;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.home-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-content .img{
+  width: 40%;
+}
+
+.home-text{
+  flex-basis: 70%;
+  padding: 10px;
+  background-color: #fff;
+
+}
+
+.home-text h2{
+  color: purple;
+  font-family: 'Lobster';
+}
+
+.home-text a{
+  display: inline;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.home-text a button{
+  color: #fff;
+  padding: 4px;
+  border-radius: 3px;
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  background-color: purple;
+}
+
+@media (max-width: 600px){
+  .home-text h2{
+   font-size: 14px;
+  }
+
+  .home-text a button{
+    font-size: 11px;
+  }
+}
+
+/*----------------------home component end-----------------------*/
+
+
+/*----------------------link component start-----------------------*/
+.link-component {
+  background: #fff;
+  padding: 5px 15px;
+  margin: 10px auto 20px;
+  border-radius: 5px;
+  height: 500px;
+  overflow-y: scroll;
+  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.link-component::-webkit-scrollbar {
+  display: none;
+}
+
+.link-component .header {
+  margin: 20px auto;
+}
+.link-component h2 {
+  color: #333;
+}
+.link-component .header .first-p {
+  padding: 6px 0 5px;
+  color: #777;
+}
+.link-component .header .second-p {
+  border: 1px solid #7071e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #7071e8;
+  font-weight: bolder;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.link-component .form-body {
+  background: #f8f3ff;
+  padding: 12px;
+  border-radius: 5px;
+  margin: 0 0 15px;
+}
+
+.link-component .form-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link-component .form-div h4 {
+  color: #555;
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+}
+
+.link-component .input-div label {
+  font-size: 14px;
+}
+.link-component .input-div .select {
+  width: 100%;
+  padding: 6px 14px;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+.link-component .input-div .select option {
+  font-size: 16px;
+}
+
+.link-component .input-div input {
+  width: 100%;
+  padding: 6px 14px;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+.link-component .input-div input:focus {
+ outline: none;
+ box-shadow: 0px 4px 4px rgba(161, 158, 158, 0.6);
+}
+
+.link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.link-btn button {
+  background-color: #7071e8;
+  color: #fff;
+  font-weight: bold;
+  font-size: 17px;
+  width: 15%;
+  padding: 4px 3px;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 600px) {
+  
+  .link-component h2 {
+    font-size: 14px;
+  }
+  .link-component .header .first-p {
+    font-size: 13px;
+  }
+
+  .link-component .header .second-p {
+    font-weight: bolder;
+    padding: 3px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+
+  .link-btn button {
+    width: 50%;
+    border-radius: 3px;
+  }
+}
+
+/*----------------------link component end-----------------------*/
+
+/*----------------------profile component start-----------------------*/
+
+.profile {
+  background: #fff;
+  padding: 5px 15px 20px;
+  margin: 10px auto;
+  border-radius: 5px;
+  /* height: 100vh;  */
+  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile .profile-header {
+  margin: 20px auto;
+}
+.profile-header h2 {
+  color: #333;
+}
+.profile-header p {
+  padding: 6px 0 5px;
+  color: #777;
+}
+
+.prifile-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: #f8f3ff;
+  border-radius: 5px;
+}
+
+.prifile-image input {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background: #7071e8;
+  color: #fff;
+  font-size: 15px;
+}
+
+.image-preview h3 {
+  font-size: 12px;
+  color: #333;
+}
+.image-preview img {
+  max-width: 50%;
+  max-height: 150px;
+  border-radius: 10px;
+}
+
+.profile-second-input {
+}
+
+.profile-second-input div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #f8f3ff;
+  border-radius: 5px;
+}
+
+.profile-second-input input {
+  width: 60%;
+  padding: 5px 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+
+.profile-second-input input:focus{
+  outline: none;
+  box-shadow: 0px 4px 4px rgba(161, 158, 158, 0.6);
+}
+
+.profile-second-input .profile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.profile-btn button {
+  background-color: #7071e8;
+  color: #fff;
+  font-weight: bold;
+  font-size: 17px;
+  width: 15%;
+  padding: 4px 3px;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 600px) {
+
+  .prifile-image input {
+    border-radius: 3px;
+    font-size: 12px;
+  }
+
+  .profile-header h2 {
+    font-size: 14px;
+  }
+  .profile-header p {
+    font-size: 13px;
+  }
+
+  .profile-second-input div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: -5px;
+  }
+
+  
+  .profile-second-input input {
+    width: 100%;
+  }
+
+  .profile-second-input div label{
+   font-size: 14px;
+  }
+
+  .profile-second-input .profile-btn {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+  }
+  
+  .profile-btn button {
+    background-color: #7071e8;
+    color: #fff;
+    font-weight: bold;
+    font-size: 17px;
+    width: 50%;
+    padding: 4px 3px;
+    border: none;
+    border-radius: 3px;
+    letter-spacing: 3px;
+  }
+}
+
+/*----------------------profile component end-----------------------*/
+
+/*----------------------interface component start-----------------------*/
+
+
+.interface-con header{
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+}
+
+.interface-con header button{
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 2px 10px;
+}
+
+.interface-con header button:first-child{
+  border: 2px solid #7071e8;
+  border-radius: 3px;
+  color: #7071e8;
+}
+
+
+.interface-con header button:nth-child(2){
+  background-color: #7071e8;
+  color: #fff;
+  border-radius: 3px;
+  padding: 7px 10px;
+}
+
+.interface { 
+  margin: 30px auto 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+  padding: 30px;
+  /* width: 95%; */
+}
+
+.interface-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.interface-content img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #7071e8;
+  box-shadow: 0px 4px 4px rgba(218, 175, 203, 0.3);
+}
+
+/*----------------------interface component end-----------------------*/
+
+
+/*----------------------interface footer start-----------------------*/
+.footer{
+  width: 100%;
+  background-color: #222;
+  color: #fff;
+  margin-top: 40px;
+  text-align: center;
+  padding: 5px ;
+}
+
+.footer p{
+  font-size: 12px;
+}
+/*----------------------interface footer end-----------------------*/
