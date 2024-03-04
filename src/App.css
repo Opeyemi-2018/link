@@ -11,17 +11,19 @@ body {
 
 .main {
   max-width: 1000px;
-  margin: auto;
-  padding: 0 5px;
-  position: relative;
-  height: 95vh;
+  margin: 0px auto 0px;
+  padding: 0 5px 2px;
+  background-color: #3559e0;
 }
 
 /*----------------------header component start-----------------------*/
 .header-component {
   background: #fff;
-  padding: 5px 15px;
+  padding: 15px;
   border-radius: 5px;
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
 
 .header-component header{
@@ -84,6 +86,7 @@ a.activeStyle {
   background-color: #fff;
   border-radius: 5px;
   padding: 5px 15px;
+  height: 83vh;
 }
 
 .home-content{
@@ -103,7 +106,7 @@ a.activeStyle {
 
 }
 
-.home-text h2{
+.home-text p{
   color: purple;
   font-family: 'Lobster';
 }
@@ -117,9 +120,10 @@ a.activeStyle {
 
 .home-text a button{
   color: #fff;
-  padding: 4px;
+  padding: 5px 5px;
   border-radius: 3px;
   border: none;
+  font-size: 11px;
   background-color: transparent;
   font-weight: bold;
   background-color: purple;
@@ -137,135 +141,6 @@ a.activeStyle {
 
 /*----------------------home component end-----------------------*/
 
-
-/*----------------------link component start-----------------------*/
-.link-component {
-  background: #fff;
-  padding: 5px 15px;
-  margin: 10px auto 20px;
-  border-radius: 5px;
-  height: 500px;
-  overflow-y: scroll;
-  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.1);
-}
-
-.link-component::-webkit-scrollbar {
-  display: none;
-}
-
-.link-component .header {
-  margin: 20px auto;
-}
-.link-component h2 {
-  color: #333;
-}
-.link-component .header .first-p {
-  padding: 6px 0 5px;
-  color: #777;
-}
-.link-component .header .second-p {
-  border: 1px solid #7071e8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: #7071e8;
-  font-weight: bolder;
-  padding: 5px;
-  font-size: 14px;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.link-component .form-body {
-  background: #f8f3ff;
-  padding: 12px;
-  border-radius: 5px;
-  margin: 0 0 15px;
-}
-
-.link-component .form-div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.link-component .form-div h4 {
-  color: #555;
-  font-weight: bold;
-  align-items: center;
-  display: flex;
-  font-size: 14px;
-}
-
-.link-component .input-div label {
-  font-size: 14px;
-}
-.link-component .input-div .select {
-  width: 100%;
-  padding: 6px 14px;
-  border: 1px solid #999;
-  border-radius: 5px;
-}
-
-.link-component .input-div .select option {
-  font-size: 16px;
-}
-
-.link-component .input-div input {
-  width: 100%;
-  padding: 6px 14px;
-  border: 1px solid #999;
-  border-radius: 5px;
-}
-
-.link-component .input-div input:focus {
- outline: none;
- box-shadow: 0px 4px 4px rgba(161, 158, 158, 0.6);
-}
-
-.link-btn {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-}
-
-.link-btn button {
-  background-color: #7071e8;
-  color: #fff;
-  font-weight: bold;
-  font-size: 17px;
-  width: 15%;
-  padding: 4px 3px;
-  border: none;
-  border-radius: 5px;
-  letter-spacing: 3px;
-}
-
-@media (max-width: 600px) {
-  
-  .link-component h2 {
-    font-size: 14px;
-  }
-  .link-component .header .first-p {
-    font-size: 13px;
-  }
-
-  .link-component .header .second-p {
-    font-weight: bolder;
-    padding: 3px;
-    font-size: 12px;
-    border-radius: 3px;
-  }
-
-  .link-btn button {
-    width: 50%;
-    border-radius: 3px;
-  }
-}
-
-/*----------------------link component end-----------------------*/
-
 /*----------------------profile component start-----------------------*/
 
 .profile {
@@ -273,12 +148,22 @@ a.activeStyle {
   padding: 5px 15px 20px;
   margin: 10px auto;
   border-radius: 5px;
-  /* height: 100vh;  */
   box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .profile .profile-header {
   margin: 20px auto;
+}
+
+.header-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content .edit{
+  color: #7071e8;
+  font-size: 16px;
 }
 .profile-header h2 {
   color: #333;
@@ -317,6 +202,8 @@ a.activeStyle {
 }
 
 .profile-second-input {
+  background: #f8f3ff;
+  border-radius: 5px;
 }
 
 .profile-second-input div {
@@ -324,8 +211,6 @@ a.activeStyle {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background: #f8f3ff;
-  border-radius: 5px;
 }
 
 .profile-second-input input {
@@ -358,8 +243,32 @@ a.activeStyle {
   border-radius: 5px;
   letter-spacing: 3px;
 }
+.success{
+  position: absolute;
+  color: green;
+  font-size: 17px;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.error{
+  position: absolute;
+  color: #b11c22;
+  font-size: 17px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
 @media (max-width: 600px) {
+
+  .profile {
+    background: #fff;
+    padding: 5px 15px 20px;
+    margin: 10px auto;
+    border-radius: 5px;
+  }
 
   .prifile-image input {
     border-radius: 3px;
@@ -374,10 +283,9 @@ a.activeStyle {
   }
 
   .profile-second-input div {
-    display: flex;
     flex-direction: column;
     align-items: start;
-    margin-bottom: -5px;
+    padding: 5px;
   }
 
   
@@ -406,12 +314,258 @@ a.activeStyle {
     border-radius: 3px;
     letter-spacing: 3px;
   }
+
+  .success{
+    font-size: 14px;
+    top: 60%;
+  }
+  
+  .error{
+    font-size: 14px;
+    top: 60%;
+  }
 }
 
 /*----------------------profile component end-----------------------*/
 
+
+
+/*----------------------link component start-----------------------*/
+.link-component {
+  background: #fff;
+  padding: 5px 15px;
+  margin: 10px 0 10px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* .form-con{
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.form-con::-webkit-scrollbar {
+  display: none;
+} */
+
+.link-component .header {
+  margin: 20px auto;
+}
+.link-component h2 {
+  color: #333;
+}
+.link-component .header .first-p {
+  padding: 6px 0 5px;
+  color: #777;
+}
+.link-component .header .second-p {
+  border: 1px solid #7071e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #7071e8;
+  font-weight: bolder;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.link-component .msg-con{
+  position: fixed;
+  top: 1%;
+  background-color: rgb(55, 158, 55);
+  width: 100%;
+}
+.link-component .link-su{
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  padding: 5px;
+}
+
+.link-component .form-div {
+  background: #f8f3ff;
+  padding: 12px;
+  border-radius: 5px;
+  margin: 0 0 15px;
+}
+
+.link-component .form-div h4{
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.link-component .form-div label{
+ display: flex;
+ align-items: center;
+ margin: 5px 0;
+ color: #333;
+ font-size: 15px;
+ font-weight: bolder;
+}
+
+.link-component .form-div input {
+  width: 100%;
+  padding: 6px 14px;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+.link-component .form-div input:focus {
+ outline: none;
+ box-shadow: 0px 4px 4px rgba(161, 158, 158, 0.6);
+}
+
+
+.link-component .form-div input::placeholder{
+  color: #999;
+  font-size: 12px;
+}
+
+.link-component .platform-div{
+  background: #f8f3ff;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.link-component .platform-div input{
+  width: 100%;
+  padding: 6px 14px;
+  border-radius: 5px;
+  margin: 5px 0;
+  border: 1px solid #999;
+}
+
+.link-component .platform-div input:focus{
+  outline: none;
+ box-shadow: 0px 4px 4px rgba(161, 158, 158, 0.6);
+}  
+
+.link-component .platform-div input::placeholder{
+  font-size: 12px;
+}
+
+
+.link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background: #fff;
+  padding: 20px 0 0;
+}
+
+.link-btn button {
+  background-color: #7071e8;
+  color: #fff;
+  font-weight: bold;
+  font-size: 17px;
+  width: 15%;
+  padding: 4px 3px;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 600px) {
+  
+  .link-component h2 {
+    font-size: 14px;
+  }
+  .link-component .header .first-p {
+    font-size: 13px;
+  }
+
+  .link-component .header .second-p {
+    font-weight: bolder;
+    padding: 3px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+
+  .link-component .link-su{
+    /* color: green;
+    font-size: 20px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+  }
+
+  .link-component .form-div {
+    padding: 7px 12px;
+    margin: 0 0 7px;
+  }
+  
+  .link-component .form-div h4{
+    font-size: 12px;
+    margin-bottom: 1px;
+  }
+  
+  .link-component .form-div label{
+   margin: 5px 0;
+   font-size: 13px;
+  }
+  
+  .link-component .form-div input {
+    padding: 6px 14px;
+    border-radius: 3px;
+  }
+
+
+  .link-component .platform-div input:first-child{
+    margin: 5px 0;
+  }
+
+  .link-btn button {
+    width: 50%;
+    border-radius: 3px;
+  }
+}
+
+/*----------------------link component end-----------------------*/
+
+
 /*----------------------interface component start-----------------------*/
 
+.no-link{
+  margin:  auto;
+  background-color: #fff;
+  padding: 10px;
+  height: 95vh;
+}
+
+.no-link-content{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ height: 100vh;
+}
+
+.no-link .fill{
+  font-size: 100px;
+  padding: 20px 0;
+  color: #666;
+}
+
+.no-link h1{
+  color: #777;
+}
+
+.no-link button{
+  padding: 5px 20px;
+  border: none;
+  background-color: #7071e8;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 3px;
+}
 
 .interface-con header{
   background-color: #fff;
@@ -419,39 +573,40 @@ a.activeStyle {
   justify-content: space-between;
   align-items: center;
   padding: 15px 10px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .interface-con header button{
-  border: none;
-  background-color: transparent;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 2px 10px;
+  
 }
 
-.interface-con header button:first-child{
-  border: 2px solid #7071e8;
-  border-radius: 3px;
+.interface-con header .back{
+  font-size: 30px;
+  font-weight: bolder;
   color: #7071e8;
 }
 
 
-.interface-con header button:nth-child(2){
+.interface-con header button{
   background-color: #7071e8;
+  display: flex;
+  align-items: center;
   color: #fff;
   border-radius: 3px;
-  padding: 7px 10px;
+  padding: 5px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .interface { 
-  margin: 30px auto 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  margin: 20px auto 0px;
+  /* max-width: 700px; */
   background: #fff;
   padding: 30px;
-  /* width: 95%; */
+  border-radius: 10px;
+  /* height: 85vh; */
 }
 
 .interface-content {
@@ -467,7 +622,111 @@ a.activeStyle {
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid #7071e8;
-  box-shadow: 0px 4px 4px rgba(218, 175, 203, 0.3);
+  box-shadow: 0px 4px 4px rgba(114, 45, 90, 0.3);
+}
+
+.interface .interface-content h1{
+  
+}
+.interface .interface-content p{
+color: #333;
+}
+
+.interface > div{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.interface ul{
+  margin: 30px 0 20px;
+  list-style: none;
+}
+
+.interface ul li a{
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  /* padding: 8px; */
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.interface ul li a p{
+  flex: 1;
+}
+
+.interface ul li a{
+  background-color: #000;
+  /* width: 100%; */
+}
+
+.interface ul li .second-a{
+  background-color: #3559e0;
+}
+.interface ul li .third-a{
+  background-color: #000;
+}
+.interface ul li .fouth-a{
+  background-color: #dc0912;
+}
+
+
+
+@media (max-width: 600px) {
+
+  .no-link .fill{
+    font-size: 70px;
+  }
+
+  .no-link h1{
+    color: #777;
+    font-size: 15px;
+  }
+
+  .no-link button{
+    padding: 4px 10px;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 3px;
+  }
+
+  .interface-con header{
+    padding: 13px 10px;
+  }
+  
+  .interface-con header .back{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .interface-con header button{
+    padding: 3px 5px;
+    font-size: 11px;
+  }
+
+  .interface { 
+    margin: 20px 6px 0;
+  }
+
+  .interface > div{
+    width: 80%;
+  }
+  
+  .interface-content img {
+    width: 90px;
+    height: 90px;
+    border: 3px solid #7071e8;
+  }
+
+  .interface .interface-content h2{
+  font-size: 16px;
+  }
+  .interface .interface-content p{
+  font-size: 13px;
+  }
+  
+ 
 }
 
 /*----------------------interface component end-----------------------*/
@@ -478,7 +737,7 @@ a.activeStyle {
   width: 100%;
   background-color: #222;
   color: #fff;
-  margin-top: 40px;
+  margin-top: 10px;
   text-align: center;
   padding: 5px ;
 }

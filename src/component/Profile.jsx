@@ -1,19 +1,60 @@
 import React, { useState, useEffect } from 'react';
+import { FaRegEdit } from "react-icons/fa";
 
-function Profile({ firstName, setfirstName, secondName, setsecondName,
-  email, setEmail, userDetails, setUserDetails }) {
+function Profile({ firstName, setfirstName, secondName, setsecondName, email, setEmail, userDetails, setUserDetails, edit, setEdit, editId }) {
+
+  let [successMsg, setSuccessMsg] = useState('')
+  let [errorMsg, setErrorMsg] = useState('')
 
   let submitProfile = (e) => {
     e.preventDefault()
-    if (firstName && secondName && email && image) {
+    if (!firstName || !secondName || !email || !image) {
+      setErrorMsg("one or more input field is empty")
+      setSuccessMsg('')
+      timeOut()
+    }
+    else if (firstName && secondName && email && image && edit) {
+      setUserDetails(userDetails.map((details) => {
+        if (details.id === editId) {
+          return { ...details, firstName: firstName, secondName: secondName, email: email }
+        }
+        return details;
+      }))
+      setSuccessMsg('successfully updated')
+      setfirstName('')
+      setsecondName('')
+      setEmail('')
+      setEdit(false)
+    }
+    else {
+      if (userDetails.length === 1) {
+        setErrorMsg("user profile already exist")
+        timeOut()
+        setSuccessMsg('')
+        setfirstName('')
+        setsecondName('')
+        setEmail('')
+        return;
+      }
       setUserDetails([...userDetails, { image: image, firstName: firstName, secondName: secondName, email: email, id: new Date().getTime().toString() }])
-      // console.log(typeof userDetails);
+      // console.log(userDetails.firstName);
+      setSuccessMsg('successfully submitted')
+      setErrorMsg('')
+      timeOut()
     }
     setfirstName('')
     setsecondName('')
     setEmail('')
-
+    // setImage(null)
   }
+
+  let timeOut = () => {
+    setTimeout(() => {
+      setSuccessMsg('')
+      setErrorMsg('')
+    }, 3000)
+  }
+
 
   // State to manage the selected image
   const [image, setImage] = useState(null);
@@ -54,13 +95,29 @@ function Profile({ firstName, setfirstName, secondName, setsecondName,
     }
   }, []); // Run this effect only on component mount
 
+
+  // . .. 
+  let _userData = localStorage['user-details'];
+  let [userData, setUserData] = useState(JSON.parse(_userData)[0]);
+
+
+
   return (
     <div className='profile'>
       <div className="profile-header">
-        <h2>Profile Details</h2>
-        <p>Add your details to create a personal touch to your profile</p>
+        <div className="header-content">
+          <div>
+            <h2>Profile Details</h2>
+            <p>Add your details to create a personal touch to your profile</p>
+          </div>
+          {/* <div>
+            <p onClick={editProfile} className='edit'>edit <FaRegEdit></FaRegEdit></p>
+          </div> */}
+        </div>
       </div>
 
+      {successMsg && (<p className='success'>{successMsg}</p>)}
+      {errorMsg && (<p className='error'>{errorMsg}</p>)}
       <div className='prifile-image'>
         <input type="file" onChange={handleImageChange} />
         {/* Display the selected image as a preview */}
@@ -77,20 +134,20 @@ function Profile({ firstName, setfirstName, secondName, setsecondName,
         <form onSubmit={submitProfile}>
           <div>
             <label>First name*</label>
-            <input onChange={(e) => setfirstName(e.target.value)} value={firstName} type="text" />
+            <input value={userData.firstName} type="text" />
           </div>
 
           <div>
             <label>Second name*</label>
-            <input onChange={(e) => setsecondName(e.target.value)} value={secondName} type="text" />
+            <input onChange={(e) => setsecondName(e.target.value)} value={userData.secondName} type="text" />
           </div>
 
           <div>
             <label>Email*</label>
-            <input onChange={(e) => setEmail(e.target.value)} value={email} type="text" />
+            <input onChange={(e) => setEmail(e.target.value)} value={userData.email} type="email" />
           </div>
           <div className="profile-btn">
-            <button type='submit'>Save</button>
+            <button type='submit'>{edit ? 'EDIT' : 'SAVE'}</button>
           </div>
         </form>
       </div>

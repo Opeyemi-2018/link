@@ -11,7 +11,7 @@ function Home() {
                     <img src={girl2} alt="" />
                 </div>
                 <div className='home-text'>
-                    <h2>Devlink is here to easily help you share your social media link with your friends and family</h2>
+                    <p>Devlink is here to easily help you share your social media link with your friends and family</p>
                     <Link to='/profile'><button>GET STARTED</button></Link>
                 </div>
             </div>
