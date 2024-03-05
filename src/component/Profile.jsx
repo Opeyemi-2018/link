@@ -96,9 +96,6 @@ function Profile({ firstName, setfirstName, secondName, setsecondName, email, se
   }, []); // Run this effect only on component mount
 
 
-  // . .. 
-  let _userData = localStorage['user-details'];
-  let [userData, setUserData] = useState(JSON.parse(_userData)[0]);
 
 
 
@@ -134,17 +131,17 @@ function Profile({ firstName, setfirstName, secondName, setsecondName, email, se
         <form onSubmit={submitProfile}>
           <div>
             <label>First name*</label>
-            <input value={userData.firstName} type="text" />
+            <input onChange={(e) => setfirstName(e.target.value)} value={firstName} type="text" />
           </div>
 
           <div>
             <label>Second name*</label>
-            <input onChange={(e) => setsecondName(e.target.value)} value={userData.secondName} type="text" />
+            <input onChange={(e) => setsecondName(e.target.value)} value={secondName} type="text" />
           </div>
 
           <div>
             <label>Email*</label>
-            <input onChange={(e) => setEmail(e.target.value)} value={userData.email} type="email" />
+            <input onChange={(e) => setEmail(e.target.value)} value={email} type="email" />
           </div>
           <div className="profile-btn">
             <button type='submit'>{edit ? 'EDIT' : 'SAVE'}</button>
